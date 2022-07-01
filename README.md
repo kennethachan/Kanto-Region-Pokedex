@@ -1,1 +1,0 @@
-# Kanto-Region-Pokedex
