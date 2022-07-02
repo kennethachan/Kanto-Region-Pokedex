@@ -1,3 +1,4 @@
+//Global Variables
 const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
@@ -72,6 +73,44 @@ const findPokeStats = () => {
     .then((data) => {
       createFindCard(data)
     })
+}
+
+createFindCard = (data) => {
+  console.log(data)
+  const renderName = data.name
+  const renderId = data.id
+  const renderImage = data.sprites.other.dream_world.front_default
+  const renderHP = data.stats[0].base_stat
+  const renderAttack = data.stats[1].base_stat
+  const renderDefense = data.stats[2].base_stat
+  const renderSpeed = data.stats[5].base_stat
+  const typeOne = data.types[0].type.name
+
+  //Found a wierd way to append data, inspired from TMDB lab/hw
+  pokemonCard.innerHTML = `<div id="pokemon-card">
+  <img id="poke-image" src="${renderImage}"/>
+  <div class="poke-name">${renderName}</div>
+   <div id="id"><span>#</span>${renderId}</div> 
+  <div id="hp">${renderHP}</div>
+  <div id="hp-num">HP</div>  
+  <div id="type-one"><span>type: </span>${typeOne}</div>
+  <div class="stats">
+      <div> 
+          <h4 id="attack-number">${renderAttack}</h4>
+          <p id="attack"> attack</p>
+      </div>
+      <div> 
+          <h4 id="defense-number">${renderDefense}</h4>
+          <p id="defense"> defense</p>
+      </div>
+      <div> 
+          <h4 id="speed-number">${renderSpeed}</h4>
+          <p id="speed"> speed</p>
+      </div>
+  </div>
+</div>
+</div>
+  `
 }
 
 //click to generate random pokemon card
