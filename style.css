@@ -18,10 +18,9 @@ body {
 #container {
     height: 525px;
     width: 475px; 
-    border: solid red 1px;
     margin-left: auto;
     margin-right: auto;
-
+    border-radius: 10px;
 }
 
 #pokemon-card {
@@ -31,6 +30,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-color: rgb(175, 216, 233);;
+    border-radius: 10px;
 
 }
 /* #image-background {
@@ -54,7 +54,7 @@ body {
     font-size: 35px;
     font-weight: bold;
     bottom: 310px;
-    right: 130px;
+    right: 120px;
 
 
 }
@@ -96,7 +96,8 @@ body {
 }
 #buttons{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -104,13 +105,27 @@ body {
 
 #random{
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 13px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
 }
 
 #search{
-    font-size: 20px;
+    font-size: 20 px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
 }
 
 #find {
-    font-size: 20px;
+    font-size: 13px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
 }
