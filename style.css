@@ -10,6 +10,7 @@ body {
 #title {
     font-size: 80px;
     text-align: center;
+    margin-bottom: 140px;
 }
 
 
@@ -18,16 +19,21 @@ body {
     font-size: 20px;
 }
 
-.pokemon-name {
-    font-size: 50px;
+#poke-image {
+    margin-bottom: 50px;
+    height: 350px;
+}
+.poke-name {
+    font-size: 35px;
+    margin-bottom: 15px;
 }
 
 #buttons{
     text-align: center;
+    margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    margin-top: 20px;
 }
 
 #random{
