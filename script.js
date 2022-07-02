@@ -38,12 +38,11 @@ const createRandomCard = (data) => {
 
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
-  <img id="poke-image" src="${renderImage}"/>
+  <div> <img id="poke-image" src="${renderImage}"/></div>
   <div class="poke-name">${renderName}</div>
    <div id="id"><span>#</span>${renderId}</div> 
-  <div id="hp">${renderHP}</div>
-  <div id="hp-num">HP</div>  
-  <div id="type-one"><span>type: </span>${typeOne}</div>
+   <div id="hp-num">${renderHP}</div> 
+   <div id="hp">HP</div>
   <div class="stats">
       <div> 
           <h4 id="attack-number">${renderAttack}</h4>
@@ -58,6 +57,10 @@ const createRandomCard = (data) => {
           <p id="speed"> speed</p>
       </div>
   </div>
+  <div id="type"> 
+  <h4 id="type-attribute">${typeOne}</h4>
+  <p id="type-text">type</p>
+</div>
 </div>
 </div>
   `
@@ -88,12 +91,11 @@ createFindCard = (data) => {
 
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
-  <img id="poke-image" src="${renderImage}"/>
+  <div> <img id="poke-image" src="${renderImage}"/></div>
   <div class="poke-name">${renderName}</div>
    <div id="id"><span>#</span>${renderId}</div> 
-  <div id="hp">${renderHP}</div>
-  <div id="hp-num">HP</div>  
-  <div id="type-one"><span>type: </span>${typeOne}</div>
+   <div id="hp-num">${renderHP}</div> 
+   <div id="hp">HP</div>
   <div class="stats">
       <div> 
           <h4 id="attack-number">${renderAttack}</h4>
@@ -108,6 +110,10 @@ createFindCard = (data) => {
           <p id="speed"> speed</p>
       </div>
   </div>
+  <div id="type"> 
+  <h4 id="type-attribute">${typeOne}</h4>
+  <p id="type-text">type</p>
+</div>
 </div>
 </div>
   `
