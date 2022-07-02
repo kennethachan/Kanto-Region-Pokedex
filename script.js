@@ -3,16 +3,6 @@ const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 
-// const pokeImage = document.getElementById("poke-image")
-// const pokemonName = document.getElementsByClassName("poke-name")
-// const hp = document.getElementById("hp")
-// const id = document.getElementById("id")
-// const attackNumber = document.getElementById("attack-number")
-// const defenseNumber = document.getElementById("defense-number")
-// const speedNumber = document.getElementById("speed-number")
-// const typeOne = document.getElementById("type-one")
-// const typeTwo = document.getElementById("type-two")
-
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
 //create a random number b/w 1 - 150
@@ -74,39 +64,17 @@ const createRandomCard = (data) => {
 
 //Retrieve pokemon API
 const findPokeStats = () => {
+  //combining search input with pokemon API
   let input = search.value
   combinedFindLink = pokeApi + input
   fetch(combinedFindLink)
     .then((response) => response.json())
     .then((data) => {
-      //   findCard(data)
-      console.log(data)
+      createFindCard(data)
     })
 }
 
-// const findCard = (data) => {
-//   let input = search.value
-//   for (let i = 0; i < response.data.name.length; i++) {
-//     const findName = response.data.name[i]
-//     console.log(data)
-//   }
-// }
 //click to generate random pokemon card
 randomBtn.addEventListener("click", randomPokeStats)
 //click to search for specific pokemon
 findBtn.addEventListener("click", findPokeStats)
-
-//   for (let i = 0; i < response.data.results.length; i++) {
-//     const renderList = response.data.results[i].original_title
-//     const movieItem = document.createElement("li")
-//     movieItem.innerHTML = renderList
-//     movieList.append(movieItem)
-//   }
-
-//   for (let i = 0; i < response.data.results.length; i++) {
-//     const renderMoviePoster = response.data.results[i].poster_path
-//     const moviePosterItem = document.createElement("li")
-//     moviePosterItem.innerHTML = `<img src =https://image.tmdb.org/t/p/original${renderMoviePoster}>`
-//   //     moviePoster.append(moviePosterItem)
-//   //   }
-// })
