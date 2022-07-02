@@ -1,5 +1,7 @@
 const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
+const findBtn = document.getElementById("find")
+const search = document.getElementById("search")
 
 // const pokeImage = document.getElementById("poke-image")
 // const pokemonName = document.getElementsByClassName("poke-name")
@@ -14,7 +16,7 @@ const randomBtn = document.getElementById("random")
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
 //create a random number b/w 1 - 150
-const pokeStats = () => {
+const randomPokeStats = () => {
   let randomNum = Math.floor(Math.random() * 150) + 1
   console.log(randomNum)
 
@@ -28,11 +30,11 @@ const pokeStats = () => {
       return response.json()
     })
     .then((data) => {
-      createCard(data)
+      createRandomCard(data)
     })
 }
-//Generate card
-const createCard = (data) => {
+//Generate random card
+const createRandomCard = (data) => {
   console.log(data)
   const renderName = data.name
   const renderId = data.id
@@ -43,6 +45,7 @@ const createCard = (data) => {
   const renderSpeed = data.stats[5].base_stat
   const typeOne = data.types[0].type.name
 
+  //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
   <img id="poke-image" src="${renderImage}"/>
   <div class="poke-name">${renderName}</div>
@@ -69,9 +72,41 @@ const createCard = (data) => {
   `
 }
 
-// const movieItem = document.createElement("li")
-// movieItem.innerHTML = renderList
-// movieList.append(movieItem)
+//Retrieve pokemon API
+const findPokeStats = () => {
+  let input = search.value
+  combinedFindLink = pokeApi + input
+  fetch(combinedFindLink)
+    .then((response) => response.json())
+    .then((data) => {
+      //   findCard(data)
+      console.log(data)
+    })
+}
 
+// const findCard = (data) => {
+//   let input = search.value
+//   for (let i = 0; i < response.data.name.length; i++) {
+//     const findName = response.data.name[i]
+//     console.log(data)
+//   }
+// }
 //click to generate random pokemon card
-randomBtn.addEventListener("click", pokeStats)
+randomBtn.addEventListener("click", randomPokeStats)
+//click to search for specific pokemon
+findBtn.addEventListener("click", findPokeStats)
+
+//   for (let i = 0; i < response.data.results.length; i++) {
+//     const renderList = response.data.results[i].original_title
+//     const movieItem = document.createElement("li")
+//     movieItem.innerHTML = renderList
+//     movieList.append(movieItem)
+//   }
+
+//   for (let i = 0; i < response.data.results.length; i++) {
+//     const renderMoviePoster = response.data.results[i].poster_path
+//     const moviePosterItem = document.createElement("li")
+//     moviePosterItem.innerHTML = `<img src =https://image.tmdb.org/t/p/original${renderMoviePoster}>`
+//   //     moviePoster.append(moviePosterItem)
+//   //   }
+// })
