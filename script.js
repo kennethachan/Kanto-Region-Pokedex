@@ -3,17 +3,33 @@ const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
-
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
+
+const colors = {
+  bug: "#26de81",
+  dragon: "#ffeaa7",
+  electric: "#fed330",
+  fairy: "#FF0069",
+  fighting: "#30336b",
+  fire: "#f0932b",
+  flying: "#81ecec",
+  grass: "#00b894",
+  ground: "#EFB549",
+  ghost: "#a55eea",
+  ice: "#74b9ff",
+  normal: "#95afc0",
+  poison: "#6c5ce7",
+  psychic: "#a29bfe",
+  rock: "#2d3436",
+  water: "#0190FF",
+}
 
 //create a random number b/w 1 - 150
 const randomPokeStats = () => {
   let randomNum = Math.floor(Math.random() * 150) + 1
-  console.log(randomNum)
 
   //combining random number with pokemon API
   const combinedLink = pokeApi + randomNum
-  console.log(combinedLink)
 
   axios.get(combinedLink).then((response) => {
     createRandomCard(response)
@@ -22,7 +38,6 @@ const randomPokeStats = () => {
 
 //Generate random card
 const createRandomCard = (response) => {
-  console.log(response)
   const renderName = response.data.name
   const renderId = response.data.id
   const renderImage = response.data.sprites.other.dream_world.front_default
@@ -68,20 +83,22 @@ const findPokeStats = () => {
   let input = search.value
   combinedFindLink = pokeApi + input
   axios.get(combinedFindLink).then((response) => {
-    createRandomCard(response)
+    createFindCard(response)
   })
 }
+//Generate searched pokemon card
+createFindCard = (response) => {
+  const renderName = response.data.name
+  const renderId = response.data.id
+  const renderImage = response.data.sprites.other.dream_world.front_default
+  const renderHP = response.data.stats[0].base_stat
+  const renderAttack = response.data.stats[1].base_stat
+  const renderDefense = response.data.stats[2].base_stat
+  const renderSpeed = response.data.stats[5].base_stat
+  const typeOne = response.data.types[0].type.name
 
-createFindCard = (data) => {
-  console.log(data)
-  const renderName = data.name
-  const renderId = data.id
-  const renderImage = data.sprites.other.dream_world.front_default
-  const renderHP = data.stats[0].base_stat
-  const renderAttack = data.stats[1].base_stat
-  const renderDefense = data.stats[2].base_stat
-  const renderSpeed = data.stats[5].base_stat
-  const typeOne = data.types[0].type.name
+  //   const cardColor = colors[typeOne]
+  //   pokemonCard.style.backgroundColor = cardColor
 
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
