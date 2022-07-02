@@ -97,9 +97,13 @@ createFindCard = (response) => {
   const renderSpeed = response.data.stats[5].base_stat
   const typeOne = response.data.types[0].type.name
 
-  //   const cardColor = colors[typeOne]
-  //   pokemonCard.style.backgroundColor = cardColor
-
+  for (let i = 0; i < typeOne.length; i++)
+    if (typeOne === "fire") {
+      pokemonCard.style.backgroundColor = "red"
+      console.log("fire")
+    } else {
+      console.log("not fire")
+    }
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
   <div> <img id="poke-image" src="${renderImage}"/></div>

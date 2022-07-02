@@ -1,0 +1,27 @@
+body {
+    background-image: url("https://thumbs.gfycat.com/HappyNeatIberianbarbel-size_restricted.gif");
+    background-size: cover;
+}
+
+#title {
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+
+button {
+    background-color: #f0f2f8;
+    font-size: 13px;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
