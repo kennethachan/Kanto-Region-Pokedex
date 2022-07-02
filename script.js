@@ -15,26 +15,22 @@ const randomPokeStats = () => {
   const combinedLink = pokeApi + randomNum
   console.log(combinedLink)
 
-  //Retrieve pokemon API based on number generated
-  fetch(combinedLink)
-    .then((response) => {
-      return response.json()
-    })
-    .then((data) => {
-      createRandomCard(data)
-    })
+  axios.get(combinedLink).then((response) => {
+    createRandomCard(response)
+  })
 }
+
 //Generate random card
-const createRandomCard = (data) => {
-  console.log(data)
-  const renderName = data.name
-  const renderId = data.id
-  const renderImage = data.sprites.other.dream_world.front_default
-  const renderHP = data.stats[0].base_stat
-  const renderAttack = data.stats[1].base_stat
-  const renderDefense = data.stats[2].base_stat
-  const renderSpeed = data.stats[5].base_stat
-  const typeOne = data.types[0].type.name
+const createRandomCard = (response) => {
+  console.log(response)
+  const renderName = response.data.name
+  const renderId = response.data.id
+  const renderImage = response.data.sprites.other.dream_world.front_default
+  const renderHP = response.data.stats[0].base_stat
+  const renderAttack = response.data.stats[1].base_stat
+  const renderDefense = response.data.stats[2].base_stat
+  const renderSpeed = response.data.stats[5].base_stat
+  const typeOne = response.data.types[0].type.name
 
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
@@ -71,11 +67,9 @@ const findPokeStats = () => {
   //combining search input with pokemon API
   let input = search.value
   combinedFindLink = pokeApi + input
-  fetch(combinedFindLink)
-    .then((response) => response.json())
-    .then((data) => {
-      createFindCard(data)
-    })
+  axios.get(combinedFindLink).then((response) => {
+    createRandomCard(response)
+  })
 }
 
 createFindCard = (data) => {
