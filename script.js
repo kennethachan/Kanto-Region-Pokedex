@@ -45,6 +45,56 @@ const createRandomCard = (response) => {
   const renderSpeed = response.data.stats[5].base_stat
   const typeOne = response.data.types[0].type.name
 
+  for (let i = 0; i < typeOne.length; i++)
+    if (typeOne === "fire") {
+      pokemonCard.style.backgroundColor = fire
+    }
+  if (typeOne === "water") {
+    pokemonCard.style.backgroundColor = water
+  }
+  if (typeOne === "bug") {
+    pokemonCard.style.backgroundColor = bug
+  }
+  if (typeOne === "dragon") {
+    pokemonCard.style.backgroundColor = dragon
+  }
+  if (typeOne === "electric") {
+    pokemonCard.style.backgroundColor = electric
+  }
+  if (typeOne === "fairy") {
+    pokemonCard.style.backgroundColor = fairy
+  }
+  if (typeOne === "fighting") {
+    pokemonCard.style.backgroundColor = fighting
+  }
+  if (typeOne === "flying") {
+    pokemonCard.style.backgroundColor = flying
+  }
+  if (typeOne === "grass") {
+    pokemonCard.style.backgroundColor = grass
+  }
+  if (typeOne === "ground") {
+    pokemonCard.style.backgroundColor = ground
+  }
+  if (typeOne === "ghost") {
+    pokemonCard.style.backgroundColor = ghost
+  }
+  if (typeOne === "ice") {
+    pokemonCard.style.backgroundColor = ice
+  }
+  if (typeOne === "normal") {
+    pokemonCard.style.backgroundColor = normal
+  }
+  if (typeOne === "poison") {
+    pokemonCard.style.backgroundColor = poison
+  }
+  if (typeOne === "psychic") {
+    pokemonCard.style.backgroundColor = psychic
+  }
+  if (typeOne === "rock") {
+    pokemonCard.style.backgroundColor = rock
+  }
+
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
   <div> <img id="poke-image" src="${renderImage}"/></div>
@@ -98,10 +148,52 @@ createFindCard = (response) => {
   for (let i = 0; i < typeOne.length; i++)
     if (typeOne === "fire") {
       pokemonCard.style.backgroundColor = fire
-      console.log("fire")
-    } else {
-      console.log("not fire")
     }
+  if (typeOne === "water") {
+    pokemonCard.style.backgroundColor = water
+  }
+  if (typeOne === "bug") {
+    pokemonCard.style.backgroundColor = bug
+  }
+  if (typeOne === "dragon") {
+    pokemonCard.style.backgroundColor = dragon
+  }
+  if (typeOne === "electric") {
+    pokemonCard.style.backgroundColor = electric
+  }
+  if (typeOne === "fairy") {
+    pokemonCard.style.backgroundColor = fairy
+  }
+  if (typeOne === "fighting") {
+    pokemonCard.style.backgroundColor = fighting
+  }
+  if (typeOne === "flying") {
+    pokemonCard.style.backgroundColor = flying
+  }
+  if (typeOne === "grass") {
+    pokemonCard.style.backgroundColor = grass
+  }
+  if (typeOne === "ground") {
+    pokemonCard.style.backgroundColor = ground
+  }
+  if (typeOne === "ghost") {
+    pokemonCard.style.backgroundColor = ghost
+  }
+  if (typeOne === "ice") {
+    pokemonCard.style.backgroundColor = ice
+  }
+  if (typeOne === "normal") {
+    pokemonCard.style.backgroundColor = normal
+  }
+  if (typeOne === "poison") {
+    pokemonCard.style.backgroundColor = poison
+  }
+  if (typeOne === "psychic") {
+    pokemonCard.style.backgroundColor = psychic
+  }
+  if (typeOne === "rock") {
+    pokemonCard.style.backgroundColor = rock
+  }
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
   <div> <img id="poke-image" src="${renderImage}"/></div>
