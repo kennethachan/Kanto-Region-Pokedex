@@ -5,26 +5,22 @@ const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
+let bug = "#26de81"
+let dragon = "#ffeaa7"
+let electric = "#fed330"
+let fairy = "#FF0069"
+let fighting = "#30336b"
 let fire = "#f0932b"
-
-// const colors = {
-//   bug: "#26de81",
-//   dragon: "#ffeaa7",
-//   electric: "#fed330",
-//   fairy: "#FF0069",
-//   fighting: "#30336b",
-//   fire: "#f0932b",
-//   flying: "#81ecec",
-//   grass: "#00b894",
-//   ground: "#EFB549",
-//   ghost: "#a55eea",
-//   ice: "#74b9ff",
-//   normal: "#95afc0",
-//   poison: "#6c5ce7",
-//   psychic: "#a29bfe",
-//   rock: "#2d3436",
-//   water: "#0190FF",
-// }
+let flying = "#81ecec"
+let grass = "#00b894"
+let ground = "#EFB549"
+let ghost = "#a55eea"
+let ice = "#74b9ff"
+let normal = "#95afc0"
+let poison = "#6c5ce7"
+let psychic = "#a29bfe"
+let rock = "#2d3436"
+let water = "#0190FF"
 
 //create a random number b/w 1 - 150
 const randomPokeStats = () => {
