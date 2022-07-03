@@ -1,10 +1,16 @@
 //Global Variables
+const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
+
+//Buttons & div wrap
 const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
-const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
+const darkModeOnBtn = document.getElementById("dark-mode-on")
+const body = document.getElementById("body")
+
+//Colors by pokemon type
 let bug = "#26de81"
 let dragon = "#ffeaa7"
 let electric = "#fed330"
@@ -29,6 +35,7 @@ const randomPokeStats = () => {
   //combining random number with pokemon API
   const combinedLink = pokeApi + randomNum
 
+  //axios call to obtain pokemon API
   axios.get(combinedLink).then((response) => {
     createRandomCard(response)
   })
@@ -43,86 +50,88 @@ const createRandomCard = (response) => {
   const renderAttack = response.data.stats[1].base_stat
   const renderDefense = response.data.stats[2].base_stat
   const renderSpeed = response.data.stats[5].base_stat
-  const typeOne = response.data.types[0].type.name
+  const renderType = response.data.types[0].type.name
 
-  for (let i = 0; i < typeOne.length; i++)
-    if (typeOne === "fire") {
+  //for loop that will change background color based on type
+  for (let i = 0; i < renderType.length; i++)
+    if (renderType === "fire") {
       pokemonCard.style.backgroundColor = fire
     }
-  if (typeOne === "water") {
+  if (renderType === "water") {
     pokemonCard.style.backgroundColor = water
   }
-  if (typeOne === "bug") {
+  if (renderType === "bug") {
     pokemonCard.style.backgroundColor = bug
   }
-  if (typeOne === "dragon") {
+  if (renderType === "dragon") {
     pokemonCard.style.backgroundColor = dragon
   }
-  if (typeOne === "electric") {
+  if (renderType === "electric") {
     pokemonCard.style.backgroundColor = electric
   }
-  if (typeOne === "fairy") {
+  if (renderType === "fairy") {
     pokemonCard.style.backgroundColor = fairy
   }
-  if (typeOne === "fighting") {
+  if (renderType === "fighting") {
     pokemonCard.style.backgroundColor = fighting
   }
-  if (typeOne === "flying") {
+  if (renderType === "flying") {
     pokemonCard.style.backgroundColor = flying
   }
-  if (typeOne === "grass") {
+  if (renderType === "grass") {
     pokemonCard.style.backgroundColor = grass
   }
-  if (typeOne === "ground") {
+  if (renderType === "ground") {
     pokemonCard.style.backgroundColor = ground
   }
-  if (typeOne === "ghost") {
+  if (renderType === "ghost") {
     pokemonCard.style.backgroundColor = ghost
   }
-  if (typeOne === "ice") {
+  if (renderType === "ice") {
     pokemonCard.style.backgroundColor = ice
   }
-  if (typeOne === "normal") {
+  if (renderType === "normal") {
     pokemonCard.style.backgroundColor = normal
   }
-  if (typeOne === "poison") {
+  if (renderType === "poison") {
     pokemonCard.style.backgroundColor = poison
   }
-  if (typeOne === "psychic") {
+  if (renderType === "psychic") {
     pokemonCard.style.backgroundColor = psychic
   }
-  if (typeOne === "rock") {
+  if (renderType === "rock") {
     pokemonCard.style.backgroundColor = rock
   }
 
-  //Found a wierd way to append data, inspired from TMDB lab/hw
+  // Found a wierd way to append data, inspired from TMDB lab/hw
+
   pokemonCard.innerHTML = `<div id="pokemon-card">
-  <div> <img id="poke-image" src="${renderImage}"/></div>
-  <div class="poke-name">${renderName}</div>
-   <div id="id"><span>#</span>${renderId}</div> 
-   <div id="hp-num">${renderHP}</div> 
-   <div id="hp">HP</div>
-  <div class="stats">
-      <div> 
-          <h4 id="attack-number">${renderAttack}</h4>
-          <p id="attack"> attack</p>
-      </div>
-      <div> 
-          <h4 id="defense-number">${renderDefense}</h4>
-          <p id="defense"> defense</p>
-      </div>
-      <div> 
-          <h4 id="speed-number">${renderSpeed}</h4>
-          <p id="speed"> speed</p>
-      </div>
+    <div> <img id="poke-image" src="${renderImage}"/></div>
+    <div class="poke-name">${renderName}</div>
+     <div id="id"><span>#</span>${renderId}</div>
+     <div id="hp-num">${renderHP}</div>
+     <div id="hp">HP</div>
+    <div class="stats">
+        <div>
+            <h4 id="attack-number">${renderAttack}</h4>
+            <p id="attack"> attack</p>
+        </div>
+        <div>
+            <h4 id="defense-number">${renderDefense}</h4>
+            <p id="defense"> defense</p>
+        </div>
+        <div>
+            <h4 id="speed-number">${renderSpeed}</h4>
+            <p id="speed"> speed</p>
+        </div>
+    </div>
+    <div id="type">
+    <h4 id="type-attribute">${renderType}</h4>
+    <p id="type-text">type</p>
   </div>
-  <div id="type"> 
-  <h4 id="type-attribute">${typeOne}</h4>
-  <p id="type-text">type</p>
-</div>
-</div>
-</div>
-  `
+  </div>
+  </div>
+    `
 }
 
 //Retrieve pokemon API
@@ -143,55 +152,55 @@ createFindCard = (response) => {
   const renderAttack = response.data.stats[1].base_stat
   const renderDefense = response.data.stats[2].base_stat
   const renderSpeed = response.data.stats[5].base_stat
-  const typeOne = response.data.types[0].type.name
+  const renderType = response.data.types[0].type.name
 
-  for (let i = 0; i < typeOne.length; i++)
-    if (typeOne === "fire") {
+  for (let i = 0; i < renderType.length; i++)
+    if (renderType === "fire") {
       pokemonCard.style.backgroundColor = fire
     }
-  if (typeOne === "water") {
+  if (renderType === "water") {
     pokemonCard.style.backgroundColor = water
   }
-  if (typeOne === "bug") {
+  if (renderType === "bug") {
     pokemonCard.style.backgroundColor = bug
   }
-  if (typeOne === "dragon") {
+  if (renderType === "dragon") {
     pokemonCard.style.backgroundColor = dragon
   }
-  if (typeOne === "electric") {
+  if (renderType === "electric") {
     pokemonCard.style.backgroundColor = electric
   }
-  if (typeOne === "fairy") {
+  if (renderType === "fairy") {
     pokemonCard.style.backgroundColor = fairy
   }
-  if (typeOne === "fighting") {
+  if (renderType === "fighting") {
     pokemonCard.style.backgroundColor = fighting
   }
-  if (typeOne === "flying") {
+  if (renderType === "flying") {
     pokemonCard.style.backgroundColor = flying
   }
-  if (typeOne === "grass") {
+  if (renderType === "grass") {
     pokemonCard.style.backgroundColor = grass
   }
-  if (typeOne === "ground") {
+  if (renderType === "ground") {
     pokemonCard.style.backgroundColor = ground
   }
-  if (typeOne === "ghost") {
+  if (renderType === "ghost") {
     pokemonCard.style.backgroundColor = ghost
   }
-  if (typeOne === "ice") {
+  if (renderType === "ice") {
     pokemonCard.style.backgroundColor = ice
   }
-  if (typeOne === "normal") {
+  if (renderType === "normal") {
     pokemonCard.style.backgroundColor = normal
   }
-  if (typeOne === "poison") {
+  if (renderType === "poison") {
     pokemonCard.style.backgroundColor = poison
   }
-  if (typeOne === "psychic") {
+  if (renderType === "psychic") {
     pokemonCard.style.backgroundColor = psychic
   }
-  if (typeOne === "rock") {
+  if (renderType === "rock") {
     pokemonCard.style.backgroundColor = rock
   }
   //Found a wierd way to append data, inspired from TMDB lab/hw
@@ -216,7 +225,7 @@ createFindCard = (response) => {
       </div>
   </div>
   <div id="type"> 
-  <h4 id="type-attribute">${typeOne}</h4>
+  <h4 id="type-attribute">${renderType}</h4>
   <p id="type-text">type</p>
 </div>
 </div>
@@ -224,9 +233,25 @@ createFindCard = (response) => {
   `
 }
 
+//dark mode on
+const darkModeOn = () => {
+  if (body.className === "dark-mode") {
+    body.style.backgroundColor = "#dae0f3"
+    body.classList.remove("dark-mode")
+  } else {
+    body.className += "dark-mode"
+    body.style.backgroundColor = "black"
+  }
+}
+
 //click to generate random pokemon card
 randomBtn.addEventListener("click", randomPokeStats)
+
 //click to search for specific pokemon
 findBtn.addEventListener("click", findPokeStats)
+
 //log random pokemon card every refresh
 window.addEventListener("load", randomPokeStats)
+
+//to turn dark mode on
+darkModeOnBtn.addEventListener("click", darkModeOn)
