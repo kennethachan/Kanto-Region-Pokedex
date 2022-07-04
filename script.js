@@ -6,31 +6,50 @@ const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
+const title = document.getElementById("title")
+const enterBtn = document.getElementById("enter")
 
-const darkModeOnBtn = document.getElementById("dark-mode-on")
+//Dark Mode variables
+const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
 const body = document.getElementById("body")
 
 //Colors by pokemon type
-let bug = "#26de81"
-let dragon = "#ffeaa7"
-let electric = "#fed330"
-let fairy = "#FF0069"
-let fighting = "#30336b"
-let fire = "#f0932b"
-let flying = "#81ecec"
-let grass = "#00b894"
-let ground = "#EFB549"
-let ghost = "#a55eea"
-let ice = "#74b9ff"
-let normal = "#95afc0"
-let poison = "#6c5ce7"
-let psychic = "#a29bfe"
-let rock = "#2d3436"
-let water = "#0190FF"
+let bug =
+  "linear-gradient(0deg, rgba(254,255,240,1) 0%, rgba(168,184,32,1) 100%)"
+let dragon =
+  "linear-gradient(0deg, rgba(221,208,255,1) 0%, rgba(112,56,248,1) 100%)"
+let electric =
+  "linear-gradient(0deg, rgba(238,236,214,1) 0%, rgba(219,184,42,1) 100%)"
+let fairy =
+  "linear-gradient(0deg, rgba(244,223,245,1) 0%, rgba(238,153,172,1) 100%)"
+let fighting =
+  "linear-gradient(0deg, rgba(255,227,225,1) 0%, rgba(192,48,40,1) 100%)"
+let fire =
+  "linear-gradient(0deg, rgba(255,240,230,1) 0%, rgba(240,128,48,1) 100%)"
+let flying =
+  "linear-gradient(0deg, rgba(243,240,255,1) 0%, rgba(168,144,240,1) 100%)"
+let grass =
+  "linear-gradient(0deg, rgba(245,255,240,1) 0%, rgba(120,200,80,1) 100%)"
+let ground =
+  "linear-gradient(0deg, rgba(255,251,240,1) 0%, rgba(224,192,104,1) 100%)"
+let ghost =
+  "linear-gradient(0deg, rgba(255,251,240,1) 0%, rgba(112,88,152,1) 100%)"
+let ice =
+  "linear-gradient(0deg, rgba(240,255,254,1) 0%, rgba(152,216,216,1) 100%)"
+let normal =
+  "linear-gradient(0deg, rgba(255,255,240,1) 0%, rgba(168,168,120,1) 100%)"
+let poison =
+  "linear-gradient(0deg, rgba(253,240,255,1) 0%, rgba(160,64,160,1) 100%)"
+let psychic =
+  "linear-gradient(0deg, rgba(255,230,238,1) 0%, rgba(248,88,136,1) 100%)"
+let rock =
+  "linear-gradient(0deg, rgba(255,252,240,1) 0%, rgba(184,160,56,1) 100%)"
+let water =
+  "linear-gradient(0deg, rgba(240,244,255,1) 0%, rgba(104,144,240,1) 100%)"
 
 //create a random number b/w 1 - 150
 const randomPokeStats = () => {
-  let randomNum = Math.floor(Math.random() * 150) + 1
+  let randomNum = Math.floor(Math.random() * 151) + 1
 
   //combining random number with pokemon API
   const combinedLink = pokeApi + randomNum
@@ -55,52 +74,52 @@ const createRandomCard = (response) => {
   //for loop that will change background color based on type
   for (let i = 0; i < renderType.length; i++)
     if (renderType === "fire") {
-      pokemonCard.style.backgroundColor = fire
+      pokemonCard.style.backgroundImage = fire
     }
   if (renderType === "water") {
-    pokemonCard.style.backgroundColor = water
+    pokemonCard.style.backgroundImage = water
   }
   if (renderType === "bug") {
-    pokemonCard.style.backgroundColor = bug
+    pokemonCard.style.backgroundImage = bug
   }
   if (renderType === "dragon") {
-    pokemonCard.style.backgroundColor = dragon
+    pokemonCard.style.backgroundImage = dragon
   }
   if (renderType === "electric") {
-    pokemonCard.style.backgroundColor = electric
+    pokemonCard.style.backgroundImage = electric
   }
   if (renderType === "fairy") {
-    pokemonCard.style.backgroundColor = fairy
+    pokemonCard.style.backgroundImage = fairy
   }
   if (renderType === "fighting") {
-    pokemonCard.style.backgroundColor = fighting
+    pokemonCard.style.backgroundImage = fighting
   }
   if (renderType === "flying") {
-    pokemonCard.style.backgroundColor = flying
+    pokemonCard.style.backgroundImage = flying
   }
   if (renderType === "grass") {
-    pokemonCard.style.backgroundColor = grass
+    pokemonCard.style.backgroundImage = grass
   }
   if (renderType === "ground") {
-    pokemonCard.style.backgroundColor = ground
+    pokemonCard.style.backgroundImage = ground
   }
   if (renderType === "ghost") {
-    pokemonCard.style.backgroundColor = ghost
+    pokemonCard.style.backgroundImage = ghost
   }
   if (renderType === "ice") {
-    pokemonCard.style.backgroundColor = ice
+    pokemonCard.style.backgroundImage = ice
   }
   if (renderType === "normal") {
-    pokemonCard.style.backgroundColor = normal
+    pokemonCard.style.backgroundImage = normal
   }
   if (renderType === "poison") {
-    pokemonCard.style.backgroundColor = poison
+    pokemonCard.style.backgroundImage = poison
   }
   if (renderType === "psychic") {
-    pokemonCard.style.backgroundColor = psychic
+    pokemonCard.style.backgroundImage = psychic
   }
   if (renderType === "rock") {
-    pokemonCard.style.backgroundColor = rock
+    pokemonCard.style.backgroundImage = rock
   }
 
   // Found a wierd way to append data, inspired from TMDB lab/hw
@@ -156,52 +175,52 @@ createFindCard = (response) => {
 
   for (let i = 0; i < renderType.length; i++)
     if (renderType === "fire") {
-      pokemonCard.style.backgroundColor = fire
+      pokemonCard.style.backgroundImage = fire
     }
   if (renderType === "water") {
-    pokemonCard.style.backgroundColor = water
+    pokemonCard.style.backgroundImage = water
   }
   if (renderType === "bug") {
-    pokemonCard.style.backgroundColor = bug
+    pokemonCard.style.backgroundImage = bug
   }
   if (renderType === "dragon") {
-    pokemonCard.style.backgroundColor = dragon
+    pokemonCard.style.backgroundImage = dragon
   }
   if (renderType === "electric") {
-    pokemonCard.style.backgroundColor = electric
+    pokemonCard.style.backgroundImage = electric
   }
   if (renderType === "fairy") {
-    pokemonCard.style.backgroundColor = fairy
+    pokemonCard.style.backgroundImage = fairy
   }
   if (renderType === "fighting") {
-    pokemonCard.style.backgroundColor = fighting
+    pokemonCard.style.backgroundImage = fighting
   }
   if (renderType === "flying") {
-    pokemonCard.style.backgroundColor = flying
+    pokemonCard.style.backgroundImage = flying
   }
   if (renderType === "grass") {
-    pokemonCard.style.backgroundColor = grass
+    pokemonCard.style.backgroundImage = grass
   }
   if (renderType === "ground") {
-    pokemonCard.style.backgroundColor = ground
+    pokemonCard.style.backgroundImage = ground
   }
   if (renderType === "ghost") {
-    pokemonCard.style.backgroundColor = ghost
+    pokemonCard.style.backgroundImage = ghost
   }
   if (renderType === "ice") {
-    pokemonCard.style.backgroundColor = ice
+    pokemonCard.style.backgroundImage = ice
   }
   if (renderType === "normal") {
-    pokemonCard.style.backgroundColor = normal
+    pokemonCard.style.backgroundImage = normal
   }
   if (renderType === "poison") {
-    pokemonCard.style.backgroundColor = poison
+    pokemonCard.style.backgroundImage = poison
   }
   if (renderType === "psychic") {
-    pokemonCard.style.backgroundColor = psychic
+    pokemonCard.style.backgroundImage = psychic
   }
   if (renderType === "rock") {
-    pokemonCard.style.backgroundColor = rock
+    pokemonCard.style.backgroundImage = rock
   }
   //Found a wierd way to append data, inspired from TMDB lab/hw
   pokemonCard.innerHTML = `<div id="pokemon-card">
@@ -233,14 +252,21 @@ createFindCard = (response) => {
   `
 }
 
-//dark mode on
-const darkModeOn = () => {
+//dark mode on/off
+const darkModeOnOff = () => {
   if (body.className === "dark-mode") {
-    body.style.backgroundColor = "#dae0f3"
+    body.style.background =
+      "linear-gradient(0deg, rgba(255,204,221,1) 0%, rgba(190,204,255,1) 100%)"
     body.classList.remove("dark-mode")
+    pokemonCard.style.boxShadow = "rgba(0, 0, 0, 0.6)"
   } else {
     body.className += "dark-mode"
-    body.style.backgroundColor = "black"
+    body.style.background = "#1A232B"
+    pokemonCard.style.boxShadow = `
+    1px 2px 4px 0px rgba(255,255,255,0.8),
+    2px 4px 8px 0px rgba(255,255,255,0.8),
+    2px 4px 16px 0px rgba(255,255,255,0.8)`
+    title.style.textShadow = "0px 0px 6px rgba(255,255,255,0.7)"
   }
 }
 
@@ -253,5 +279,5 @@ findBtn.addEventListener("click", findPokeStats)
 //log random pokemon card every refresh
 window.addEventListener("load", randomPokeStats)
 
-//to turn dark mode on
-darkModeOnBtn.addEventListener("click", darkModeOn)
+//to turn dark mode on/off
+darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
