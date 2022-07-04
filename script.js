@@ -8,6 +8,7 @@ const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
 const enterBtn = document.getElementById("enter")
+const allPokemonBtn = document.getElementById("all-pokemon")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -19,7 +20,7 @@ let bug =
 let dragon =
   "linear-gradient(0deg, rgba(221,208,255,1) 0%, rgba(112,56,248,1) 100%)"
 let electric =
-  "linear-gradient(0deg, rgba(238,236,214,1) 0%, rgba(219,184,42,1) 100%)"
+  "linear-gradient(0deg, rgba(255,251,236,1) 0%, rgba(248,208,48,1) 100%)"
 let fairy =
   "linear-gradient(0deg, rgba(244,223,245,1) 0%, rgba(238,153,172,1) 100%)"
 let fighting =
@@ -31,19 +32,19 @@ let flying =
 let grass =
   "linear-gradient(0deg, rgba(245,255,240,1) 0%, rgba(120,200,80,1) 100%)"
 let ground =
-  "linear-gradient(0deg, rgba(255,251,240,1) 0%, rgba(224,192,104,1) 100%)"
+  "linear-gradient(0deg, rgba(255,241,201,1) 0%, rgba(172,123,20,1) 100%)"
 let ghost =
   "linear-gradient(0deg, rgba(255,251,240,1) 0%, rgba(112,88,152,1) 100%)"
 let ice =
   "linear-gradient(0deg, rgba(240,255,254,1) 0%, rgba(152,216,216,1) 100%)"
 let normal =
-  "linear-gradient(0deg, rgba(255,255,240,1) 0%, rgba(168,168,120,1) 100%)"
+  "linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(231,231,165,1) 100%)"
 let poison =
   "linear-gradient(0deg, rgba(253,240,255,1) 0%, rgba(160,64,160,1) 100%)"
 let psychic =
   "linear-gradient(0deg, rgba(255,230,238,1) 0%, rgba(248,88,136,1) 100%)"
 let rock =
-  "linear-gradient(0deg, rgba(255,252,240,1) 0%, rgba(184,160,56,1) 100%)"
+  "linear-gradient(0deg, rgba(255,251,232,1) 0%, rgba(113,105,70,1) 100%)"
 let water =
   "linear-gradient(0deg, rgba(240,244,255,1) 0%, rgba(104,144,240,1) 100%)"
 
@@ -173,6 +174,7 @@ createFindCard = (response) => {
   const renderSpeed = response.data.stats[5].base_stat
   const renderType = response.data.types[0].type.name
 
+  //for loop that will change background color based on type
   for (let i = 0; i < renderType.length; i++)
     if (renderType === "fire") {
       pokemonCard.style.backgroundImage = fire
@@ -266,8 +268,15 @@ const darkModeOnOff = () => {
     1px 2px 4px 0px rgba(255,255,255,0.8),
     2px 4px 8px 0px rgba(255,255,255,0.8),
     2px 4px 16px 0px rgba(255,255,255,0.8)`
-    title.style.textShadow = "0px 0px 6px rgba(255,255,255,0.7)"
+    title.style.textShadow = "0px 0px 6px rgba(255,255,255,0.8)"
   }
+}
+
+//generate all 151 pokemon
+rangeArray = []
+for (let i = 1; i <= 151; i++) {
+  rangeArray.push(i)
+  console.log(rangeArray)
 }
 
 //click to generate random pokemon card
@@ -281,3 +290,6 @@ window.addEventListener("load", randomPokeStats)
 
 //to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
+
+//click to show all pokemon
+allPokemonBtn.addEventListener("click", allPokemon)
