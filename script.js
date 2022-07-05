@@ -273,12 +273,26 @@ const darkModeOnOff = () => {
 }
 
 //generate all 151 pokemon
-rangeArray = []
-for (let i = 1; i <= 151; i++) {
-  rangeArray.push(i)
-  console.log(rangeArray)
-}
+// const getAllPokemon = () => {
+//   array = []
+//   for (let i = 1; i <= 151; i++) {
+//     array.push(i)
+//     console.log(array[i])
+//     axios.get(pokeApi).then((response) => {
+//       // console.log(response)
+//       allPokemon(response)
+//       allPokemon = (response) => {
+//         const renderName = response.data
+//         // console.log(renderName)
+//       }
+//     })
+//   }
+// }
 
+axios.get(pokeApi + 1).then((response) => {
+  // for (let i = 0; i < 151; i++) {
+  console.log(response.data)
+})
 //click to generate random pokemon card
 randomBtn.addEventListener("click", randomPokeStats)
 
@@ -291,5 +305,5 @@ window.addEventListener("load", randomPokeStats)
 //to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
 
-//click to show all pokemon
-allPokemonBtn.addEventListener("click", allPokemon)
+// // //click to show all pokemon
+allPokemonBtn.addEventListener("click", getAllPokemon)

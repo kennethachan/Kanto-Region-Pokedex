@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -42,8 +46,9 @@ a{
 }
 
 #opening-body {
-    background-image: url("https://thumbs.gfycat.com/HappyNeatIberianbarbel-size_restricted.gif");
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                       rgba(0, 0, 0, 0.5)), url("https://thumbs.gfycat.com/HappyNeatIberianbarbel-size_restricted.gif");
+                       background-size:cover;
 }
 
 body {
@@ -136,11 +141,11 @@ body {
     margin-right: auto;
     text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #random{
-    margin-right: 40px;
+    margin-right: 20px;
     font-size: 13px;
     background-color: #343740;
     color: white;
@@ -187,10 +192,24 @@ body {
     border-radius: 7px;
     padding: 5px;
     cursor: pointer;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 #dark-mode-on-off:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
 
+#all-pokemon {
+    background-color: #343740;
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#all-pokemon:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
