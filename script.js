@@ -48,6 +48,9 @@ let rock =
 let water =
   "linear-gradient(0deg, rgba(240,244,255,1) 0%, rgba(104,144,240,1) 100%)"
 
+//click sound
+let audio = new Audio("audio.mp3")
+
 //create a random number b/w 1 - 150
 const randomPokeStats = () => {
   let randomNum = Math.floor(Math.random() * 151) + 1
@@ -272,27 +275,10 @@ const darkModeOnOff = () => {
   }
 }
 
-//generate all 151 pokemon
-// const getAllPokemon = () => {
-//   array = []
-//   for (let i = 1; i <= 151; i++) {
-//     array.push(i)
-//     console.log(array[i])
-//     axios.get(pokeApi).then((response) => {
-//       // console.log(response)
-//       allPokemon(response)
-//       allPokemon = (response) => {
-//         const renderName = response.data
-//         // console.log(renderName)
-//       }
-//     })
-//   }
-// }
+//getAllPokemon Api call
 
-axios.get(pokeApi + 1).then((response) => {
-  // for (let i = 0; i < 151; i++) {
-  console.log(response.data)
-})
+//allPokemon function to generate data
+
 //click to generate random pokemon card
 randomBtn.addEventListener("click", randomPokeStats)
 
@@ -305,5 +291,17 @@ window.addEventListener("load", randomPokeStats)
 //to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
 
-// // //click to show all pokemon
-allPokemonBtn.addEventListener("click", getAllPokemon)
+//click sound
+// enterBtn.addEventListener("click", (e) => {
+//   audio.play()
+// })
+randomBtn.addEventListener("click", (e) => {
+  audio.play()
+})
+findBtn.addEventListener("click", (e) => {
+  audio.play()
+  search.value = ""
+})
+darkModeOnOffBtn.addEventListener("click", (e) => {
+  audio.play()
+})

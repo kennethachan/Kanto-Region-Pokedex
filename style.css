@@ -13,42 +13,102 @@ color: #edf1ff;
 font-size: 50px;
 font-weight: 400;
 text-align: center;
+text-shadow:0px 0px 6px rgba(255,255,255,0.8);
 }
 
 #opening-title:hover {
     text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
 }
 
-#enter {
-    font-size: 50px;
-    background-color: #343740;
-    color: white;
-    border: none;
-    border-radius: 7px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
+a{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 300px;
+    align-items: center;
+    position: relative;
+    top: 500px;
 }
 
-#enter:hover {
+a:hover {
     box-shadow: 1px 2px 4px 0px rgba(255,255,255,0.8),
     2px 4px 8px 0px rgba(255,255,255,0.8),
-    2px 4px 16px 0px rgba(255,255,255,0.8)
+    2px 4px 16px 0px rgba(255,255,255,0.8);
 }
 
-a{
-    text-decoration: none;
+#top-half {
+    width: 150px;
+    height: 75px;
+    background-color: red;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: center;
+    
 }
+
+#center-band {
+    background-color: black;
+    width: 150px;
+    height: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: center;
+    position: relative;
+    bottom: 75px;
+
+}
+
+#center-circle {
+    background: black;
+    width: 43px;
+    height: 43px;
+    border-radius: 21.5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: center;
+    position: relative;
+    bottom: 100px;
+    
+}
+
+#center-button {
+    background: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: center;
+    position: relative;
+    bottom: 134.5px;
+}
+
+#bottom-half {
+    width: 150px;
+    height: 75px;
+    background-color: white;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    align-items: center;
+}
+
 
 #opening-body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                       rgba(0, 0, 0, 0.5)), url("https://thumbs.gfycat.com/HappyNeatIberianbarbel-size_restricted.gif");
-                       background-size:cover;
+    background: #1A232B;
+
+                       background-size: cover;
+                       background-repeat: no-repeat;
 }
 
 body {
@@ -125,12 +185,14 @@ body {
     justify-content: space-evenly;
     position: relative;
     bottom: 100px;
+    font-weight: 100;
 }
 
 #type {
     font-size: 25px;
     position: relative;
     bottom: 70px;
+    font-weight: 100;
 }
 #buttons{
     width: 475px;
@@ -146,11 +208,12 @@ body {
 
 #random{
     margin-right: 20px;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: bold;
     background-color: #343740;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 30px;
     padding: 5px;
     cursor: pointer;
 
@@ -165,16 +228,17 @@ body {
     background-color: #343740;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 30px;
     padding: 5px;
 }
 
 #find {
     background-color: #343740;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: bold;
     border: none;
-    border-radius: 7px;
+    border-radius: 30px;
     padding: 5px;
     cursor: pointer;
     margin-left: 10px;
@@ -187,9 +251,10 @@ body {
 #dark-mode-on-off {
     background-color: #343740;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: bold;
     border: none;
-    border-radius: 7px;
+    border-radius: 30px;
     padding: 5px;
     cursor: pointer;
     margin-left: 20px;
@@ -203,6 +268,7 @@ body {
     background-color: #343740;
     color: white;
     font-size: 13px;
+    font-weight: bold;
     border: none;
     border-radius: 7px;
     padding: 5px;
