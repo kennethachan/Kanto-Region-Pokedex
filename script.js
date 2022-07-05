@@ -7,8 +7,7 @@ const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
-const enterBtn = document.getElementById("enter")
-const allPokemonBtn = document.getElementById("all-pokemon")
+const enterBtn = document.getElementById("enter-pokeball")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -49,7 +48,8 @@ let water =
   "linear-gradient(0deg, rgba(240,244,255,1) 0%, rgba(104,144,240,1) 100%)"
 
 //click sound
-let audio = new Audio("audio.mp3")
+let btnAudio = new Audio("audio.mp3")
+let enterAudio = new Audio("obtain.mp3")
 
 //create a random number b/w 1 - 150
 const randomPokeStats = () => {
@@ -292,16 +292,13 @@ window.addEventListener("load", randomPokeStats)
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
 
 //click sound
-// enterBtn.addEventListener("click", (e) => {
-//   audio.play()
-// })
 randomBtn.addEventListener("click", (e) => {
-  audio.play()
+  btnAudio.play()
 })
 findBtn.addEventListener("click", (e) => {
-  audio.play()
+  btnAudio.play()
   search.value = ""
 })
 darkModeOnOffBtn.addEventListener("click", (e) => {
-  audio.play()
+  btnAudio.play()
 })
