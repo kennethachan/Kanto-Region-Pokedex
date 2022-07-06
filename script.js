@@ -7,7 +7,7 @@ const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
-const enterBtn = document.getElementById("enter-pokeball")
+const allPokemonBtn = document.getElementById("all-pokemon")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -126,8 +126,7 @@ const createRandomCard = (response) => {
     pokemonCard.style.backgroundImage = rock
   }
 
-  // Found a wierd way to append data, inspired from TMDB lab/hw
-
+  //updating extracted data to html
   pokemonCard.innerHTML = `<div id="pokemon-card">
     <div> <img id="poke-image" src="${renderImage}"/></div>
     <div class="poke-name">${renderName}</div>
@@ -227,7 +226,7 @@ createFindCard = (response) => {
   if (renderType === "rock") {
     pokemonCard.style.backgroundImage = rock
   }
-  //Found a wierd way to append data, inspired from TMDB lab/hw
+  //updating extracted data to html
   pokemonCard.innerHTML = `<div id="pokemon-card">
   <div> <img id="poke-image" src="${renderImage}"/></div>
   <div class="poke-name">${renderName}</div>
@@ -264,6 +263,9 @@ const darkModeOnOff = () => {
       "linear-gradient(0deg, rgba(255,204,221,1) 0%, rgba(190,204,255,1) 100%)"
     body.classList.remove("dark-mode")
     pokemonCard.style.boxShadow = "rgba(0, 0, 0, 0.6)"
+    randomBtn.style.color = "white"
+    findBtn.style.color = "white"
+    allPokemonBtn.style.color = "white"
   } else {
     body.className += "dark-mode"
     body.style.background = "#1A232B"
@@ -272,10 +274,34 @@ const darkModeOnOff = () => {
     2px 4px 8px 0px rgba(255,255,255,0.8),
     2px 4px 16px 0px rgba(255,255,255,0.8)`
     title.style.textShadow = "0px 0px 6px rgba(255,255,255,0.8)"
+    randomBtn.style.color = "rgb(254, 239, 140)"
+    findBtn.style.color = "rgb(254, 239, 140)"
+    allPokemonBtn.style.color = "rgb(254, 239, 140)"
   }
 }
 
 //getAllPokemon Api call
+// const callAllPokemon = () => {
+//   axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then((response) => {
+//     return response.then(response.results[i])
+//   })
+// }
+
+const callAllPokemon = async () => {
+  let promises = []
+  let res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+  let results = res.data.results
+  results.forEach((result) => {
+    // console.log(result.name)
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${result.name}`)
+      .then((response) => {
+        console.log(response)
+      })
+  })
+}
+// let allPromises = await Promise.all(promises)
+// console.log(promises)
 
 //allPokemon function to generate data
 
@@ -288,8 +314,11 @@ findBtn.addEventListener("click", findPokeStats)
 //log random pokemon card every refresh
 window.addEventListener("load", randomPokeStats)
 
-//to turn dark mode on/off
+//click to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
+
+//click to see all Pokemon
+allPokemonBtn.addEventListener("click", callAllPokemon)
 
 //click sound
 randomBtn.addEventListener("click", (e) => {
