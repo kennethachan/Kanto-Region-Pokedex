@@ -8,6 +8,7 @@ const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
 const allPokemonBtn = document.getElementById("all-pokemon")
+const allPokemonlist = document.getElementById("all-pokemon-list")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -295,20 +296,25 @@ const callAllPokemon = async () => {
 
 //allPokemon function to generate data
 getAllPokemon = (response) => {
-  console.log(response.data.name)
   const renderName = response.data.name
   const renderId = response.data.id
   const renderImage = response.data.sprites.other.dream_world.front_default
+
   // console.log(renderName, renderId, renderImage)
 
   //updating extracted data to html
-  const pokeName = document.createElement("p")
+  const pokeName = document.createElement("div")
   pokeName.innerHTML = renderName
-  pokemonCard.append(pokeName)
+  // pokeName.style.display = "flex"
+  // pokeName.style.flexWrap = "wrap"
+  allPokemonlist.append(pokeName)
 
-  const pokeId = document.createElement("p")
-  pokeId.innerHTML = renderId
-  pokemonCard.append(pokeId)
+  const pokeImage = document.createElement("img")
+  pokeImage.setAttribute("src", renderImage)
+  // pokeImage.style.width = "100px"
+  // pokeImage.style.display = "flex"
+  // pokeImage.style.flexWrap = "wrap"
+  allPokemonlist.append(pokeImage)
 }
 
 //click to generate random pokemon card
