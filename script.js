@@ -281,29 +281,35 @@ const darkModeOnOff = () => {
 }
 
 //getAllPokemon Api call
-// const callAllPokemon = () => {
-//   axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then((response) => {
-//     return response.then(response.results[i])
-//   })
-// }
-
 const callAllPokemon = async () => {
-  let promises = []
   let res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=151`)
   let results = res.data.results
   results.forEach((result) => {
-    // console.log(result.name)
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${result.name}`)
       .then((response) => {
-        console.log(response)
+        getAllPokemon(response)
       })
   })
 }
-// let allPromises = await Promise.all(promises)
-// console.log(promises)
 
 //allPokemon function to generate data
+getAllPokemon = (response) => {
+  console.log(response.data.name)
+  const renderName = response.data.name
+  const renderId = response.data.id
+  const renderImage = response.data.sprites.other.dream_world.front_default
+  // console.log(renderName, renderId, renderImage)
+
+  //updating extracted data to html
+  const pokeName = document.createElement("p")
+  pokeName.innerHTML = renderName
+  pokemonCard.append(pokeName)
+
+  const pokeId = document.createElement("p")
+  pokeId.innerHTML = renderId
+  pokemonCard.append(pokeId)
+}
 
 //click to generate random pokemon card
 randomBtn.addEventListener("click", randomPokeStats)
