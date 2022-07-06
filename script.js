@@ -7,8 +7,6 @@ const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
-const allPokemonBtn = document.getElementById("all-pokemon")
-const allPokemonlist = document.getElementById("all-pokemon-list")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -275,9 +273,9 @@ const darkModeOnOff = () => {
     2px 4px 8px 0px rgba(255,255,255,0.8),
     2px 4px 16px 0px rgba(255,255,255,0.8)`
     title.style.textShadow = "0px 0px 6px rgba(255,255,255,0.8)"
-    randomBtn.style.color = "rgb(254, 239, 140)"
-    findBtn.style.color = "rgb(254, 239, 140)"
-    allPokemonBtn.style.color = "rgb(254, 239, 140)"
+    randomBtn.style.color = "rgb(255, 235, 107)"
+    findBtn.style.color = "rgb(255, 235, 107)"
+    allPokemonBtn.style.color = "rgb(255, 235, 107)"
   }
 }
 
@@ -300,20 +298,15 @@ getAllPokemon = (response) => {
   const renderId = response.data.id
   const renderImage = response.data.sprites.other.dream_world.front_default
 
-  // console.log(renderName, renderId, renderImage)
-
   //updating extracted data to html
   const pokeName = document.createElement("div")
+  pokeName.className = "pokeName"
   pokeName.innerHTML = renderName
-  // pokeName.style.display = "flex"
-  // pokeName.style.flexWrap = "wrap"
   allPokemonlist.append(pokeName)
 
   const pokeImage = document.createElement("img")
   pokeImage.setAttribute("src", renderImage)
-  // pokeImage.style.width = "100px"
-  // pokeImage.style.display = "flex"
-  // pokeImage.style.flexWrap = "wrap"
+  pokeImage.className = "pokeImage"
   allPokemonlist.append(pokeImage)
 }
 
@@ -328,9 +321,6 @@ window.addEventListener("load", randomPokeStats)
 
 //click to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
-
-//click to see all Pokemon
-allPokemonBtn.addEventListener("click", callAllPokemon)
 
 //click sound
 randomBtn.addEventListener("click", (e) => {
