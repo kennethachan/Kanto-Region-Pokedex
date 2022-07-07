@@ -156,6 +156,7 @@ const createRandomCard = (response) => {
   </div>
   </div>
     `
+  //Adjusting visual view to hide all pokemon list
   pokemonCard.style.display = "block"
   container.style.display = "block"
   allPokemonlist.style.display = "none"
@@ -259,6 +260,7 @@ createFindCard = (response) => {
 </div>
 </div>
   `
+  //Adjusting visual view to hide all pokemon list
   pokemonCard.style.display = "block"
   container.style.display = "block"
   allPokemonlist.style.display = "none"
@@ -269,6 +271,9 @@ const darkModeOnOff = () => {
   if (body.className === "dark-mode") {
     body.style.background =
       "linear-gradient(0deg, rgba(255,204,221,1) 0%, rgba(190,204,255,1) 100%)"
+    body.style.backgroundRepeat = "no-repeat"
+    body.style.height = "100%"
+    body.style.backgroundAttachment = "fixed"
     body.classList.remove("dark-mode")
     pokemonCard.style.boxShadow = "rgba(0, 0, 0, 0.6)"
     randomBtn.style.color = "white"
@@ -308,17 +313,11 @@ getAllPokemon = (response) => {
   const renderId = response.data.id
   const renderImage = response.data.sprites.front_default
 
-  //updating extracted data to html
-  // const pokeName = document.createElement("div")
-  // pokeName.className = "pokeName"
-  // pokeName.innerHTML = renderName
-  // allPokemonlist.append(pokeName)
-
   const pokeImage = document.createElement("img")
   pokeImage.setAttribute("src", renderImage)
   pokeImage.className = "pokeImage"
   allPokemonlist.append(pokeImage)
-
+  //Adjusting visual view to hide pokemonCard and container divs
   pokemonCard.style.display = "none"
   container.style.display = "none"
   allPokemonlist.style.display = "block"
@@ -339,7 +338,7 @@ darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
 //click to see all Pokemon
 allPokemonBtn.addEventListener("click", callAllPokemon)
 
-//click sound
+//click sounds
 randomBtn.addEventListener("click", (e) => {
   btnAudio.play()
 })
@@ -348,5 +347,8 @@ findBtn.addEventListener("click", (e) => {
   search.value = ""
 })
 darkModeOnOffBtn.addEventListener("click", (e) => {
+  btnAudio.play()
+})
+allPokemonBtn.addEventListener("click", (e) => {
   btnAudio.play()
 })

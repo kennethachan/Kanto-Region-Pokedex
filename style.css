@@ -215,7 +215,7 @@ body {
     font-weight: 100;
 }
 #buttons{
-    width: 530px;
+    width: 550px;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 50px;
@@ -386,8 +386,8 @@ body {
     #buttons {
         width: 83%;
         margin-top: 0px;
-          display: flex;
-    justify-content: space-evenly;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     #random {
@@ -400,6 +400,10 @@ body {
         font-size: 8px;
     }
     #dark-mode-on-off {
+        font-size: 8px;
+    }
+
+    #all-pokemon {
         font-size: 8px;
     }
 }
