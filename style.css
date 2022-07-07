@@ -387,7 +387,7 @@ body {
         width: 83%;
         margin-top: 0px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-betweeen;
     }
 
     #random {
