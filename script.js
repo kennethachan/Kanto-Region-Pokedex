@@ -2,11 +2,14 @@
 const pokeApi = `https://pokeapi.co/api/v2/pokemon/`
 
 //Buttons & div wrap
+const container = document.getElementById("container")
 const pokemonCard = document.getElementById("pokemon-card")
 const randomBtn = document.getElementById("random")
 const findBtn = document.getElementById("find")
 const search = document.getElementById("search")
 const title = document.getElementById("title")
+const allPokemonBtn = document.getElementById("all-pokemon")
+const allPokemonlist = document.getElementById("all-pokemon-list")
 
 //Dark Mode variables
 const darkModeOnOffBtn = document.getElementById("dark-mode-on-off")
@@ -153,6 +156,9 @@ const createRandomCard = (response) => {
   </div>
   </div>
     `
+  pokemonCard.style.display = "block"
+  container.style.display = "block"
+  allPokemonlist.style.display = "none"
 }
 
 //Retrieve pokemon API
@@ -253,6 +259,9 @@ createFindCard = (response) => {
 </div>
 </div>
   `
+  pokemonCard.style.display = "block"
+  container.style.display = "block"
+  allPokemonlist.style.display = "none"
 }
 
 //dark mode on/off
@@ -268,6 +277,7 @@ const darkModeOnOff = () => {
   } else {
     body.className += "dark-mode"
     body.style.background = "#1A232B"
+    body.style.backgroundRepeat = "no-repeat"
     pokemonCard.style.boxShadow = `
     1px 2px 4px 0px rgba(255,255,255,0.8),
     2px 4px 8px 0px rgba(255,255,255,0.8),
@@ -296,18 +306,22 @@ const callAllPokemon = async () => {
 getAllPokemon = (response) => {
   const renderName = response.data.name
   const renderId = response.data.id
-  const renderImage = response.data.sprites.other.dream_world.front_default
+  const renderImage = response.data.sprites.front_default
 
   //updating extracted data to html
-  const pokeName = document.createElement("div")
-  pokeName.className = "pokeName"
-  pokeName.innerHTML = renderName
-  allPokemonlist.append(pokeName)
+  // const pokeName = document.createElement("div")
+  // pokeName.className = "pokeName"
+  // pokeName.innerHTML = renderName
+  // allPokemonlist.append(pokeName)
 
   const pokeImage = document.createElement("img")
   pokeImage.setAttribute("src", renderImage)
   pokeImage.className = "pokeImage"
   allPokemonlist.append(pokeImage)
+
+  pokemonCard.style.display = "none"
+  container.style.display = "none"
+  allPokemonlist.style.display = "block"
 }
 
 //click to generate random pokemon card
@@ -321,6 +335,9 @@ window.addEventListener("load", randomPokeStats)
 
 //click to turn dark mode on/off
 darkModeOnOffBtn.addEventListener("click", darkModeOnOff)
+
+//click to see all Pokemon
+allPokemonBtn.addEventListener("click", callAllPokemon)
 
 //click sound
 randomBtn.addEventListener("click", (e) => {

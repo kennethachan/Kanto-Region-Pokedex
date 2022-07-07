@@ -215,7 +215,7 @@ body {
     font-weight: 100;
 }
 #buttons{
-    width: 475px;
+    width: 530px;
     text-align: center;
     margin-top: 60px;
     margin-bottom: 50px;
@@ -286,6 +286,34 @@ body {
 
 #dark-mode-on-off:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+#all-pokemon{
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+#all-pokemon:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+#all-pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+}
+
+.pokeName {
+    position: relative;
+    right: 100px;
+    top: 50px;
 }
 
 @media only screen and (max-width:375px) {
