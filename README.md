@@ -24,7 +24,7 @@
 
 #### Online Pokedex featuring the first 151 Pokemon from the Kanto region as seen in the games "Pokemon Red", "Pokemon Blue" and "Pokemon Yellow". The entry page features a pokeball that bounces and center button glows red when the mouse hovers over it. Clicking it will let you enter into the main page.
 
-#### The main page has (4) main features:
+#### The main page has (4) features:
 
 #### -Clicking the "Random Pokemon" button will generate a random Pokemon card. This card displays the Pokemon's name, ID#, HP and stats like attack, defense, speed and type.
 
@@ -58,7 +58,7 @@
 
 #### Dark/Light Mode: [Geeks for Geeks](https://www.geeksforgeeks.org/how-to-create-dark-light-mode-for-website-using-javascript-jquery/)
 
-#### Pokemon Type Colors: [Bulbagarden](https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates)
+#### Pokemon Type Hex Colors: [Bulbagarden](https://bulbapedia.bulbagarden.net/wiki/Category:Type_color_templates)
 
 #### Background Gradient: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
 
