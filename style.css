@@ -287,3 +287,91 @@ body {
 #dark-mode-on-off:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
+
+@media only screen and (max-width:375px) {
+    body {
+        width: 375px;
+        height: 667px;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    #title {
+        font-size: 25px;
+        margin-bottom: 50px;
+    }
+    #container {
+        width: 80%;
+        height: 65%;
+
+    }
+    #pokemon-card {
+        width: 90%;
+        height: 80%;
+        border: none;
+        box-shadow: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #poke-image {
+        width: 50%;
+        margin-top: 70px;
+    }
+    .poke-name {
+        font-size: 17px;
+        position:relative;
+    bottom: 265px;
+    right: 75px;
+    }
+    #id {
+        font-size: 12px;
+        position: relative;
+        bottom: 266px;
+        right: 85px;
+    }
+    #hp {
+        font-size: 13px;
+        position: relative;
+        bottom: 317px;
+        left: 85px;
+    }
+    #hp-num {
+        font-size: 13px;
+        position: relative;
+        bottom: 300px;
+        left: 110px;
+    }
+
+    .stats{
+        font-size: 12px;
+        position: relative;
+        bottom: 90px;
+
+    }
+    #type {
+        font-size: 12px;
+        position: relative;
+        bottom: 80px;
+    }
+    #buttons {
+        width: 83%;
+        margin-top: 0px;
+          display: flex;
+    justify-content: space-evenly;
+    }
+
+    #random {
+        font-size: 8px;
+    }
+    #search {
+        font-size: 8px;
+    }
+    #find {
+        font-size: 8px;
+    }
+    #dark-mode-on-off {
+        font-size: 8px;
+    }
+}
