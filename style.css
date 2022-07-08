@@ -44,7 +44,7 @@ a:hover {
 #top-half {
     width: 150px;
     height: 75px;
-    background-color: red;
+    background: radial-gradient(circle, rgba(255,147,147,1) 0%, rgba(227,0,0,1) 100%);
     border-top-left-radius: 150px;
     border-top-right-radius: 150px;
     margin-left: auto;
@@ -100,19 +100,19 @@ a:hover {
 @keyframes blinker {
     0%{
         opacity: 0.5;
-      }
-      50%{
+    }
+    50%{
         opacity: 1;
-      }
-      100%{
+    }
+    100%{
         opacity: 0.5;
-      }
+    }
 }
 
 #bottom-half {
     width: 150px;
     height: 75px;
-    background-color: white;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(226,226,226,1) 100%);
     border-bottom-left-radius: 150px;
     border-bottom-right-radius: 150px;
     margin-left: auto;
@@ -223,7 +223,7 @@ body {
     margin-right: auto;
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 #random{
@@ -249,7 +249,11 @@ body {
     color: white;
     border: none;
     border-radius: 30px;
+    border-bottom-right-radius: 0px;;
+    border-top-right-radius: 0px;;
     padding: 5px;
+    position: relative;
+    left: 4.8px;
 }
 
 #find {
@@ -259,9 +263,13 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 30px;
+    border-bottom-left-radius: 0px;;
+    border-top-left-radius: 0px;;
     padding: 5px;
     cursor: pointer;
     margin-left: 10px;
+    position: relative;
+    right: 4.8px;
 }
 
 #find:hover {
@@ -401,11 +409,17 @@ body {
         margin: 10px;
         padding: 11px;
         padding-left:0px;
+        position: relative;
+        left: 4.8px;
     }
+    
     #find {
         font-size: 12px;
         margin: 10px;
+        margin-left:0px;
         padding: 11px;
+        position: relative;
+        right: 5px;
     }
     #dark-mode-on-off {
         font-size: 12px;
