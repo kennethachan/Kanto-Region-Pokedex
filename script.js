@@ -275,7 +275,7 @@ const darkModeOnOff = () => {
     body.style.height = "100%"
     body.style.backgroundAttachment = "fixed"
     body.classList.remove("dark-mode")
-    pokemonCard.style.boxShadow = "rgba(0, 0, 0, 0.6)"
+    pokemonCard.style.boxShadow = `rgba(0, 0, 0, 0.4) 0px 5px 15px`
     randomBtn.style.color = "white"
     findBtn.style.color = "white"
     allPokemonBtn.style.color = "white"
