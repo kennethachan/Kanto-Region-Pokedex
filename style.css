@@ -323,17 +323,20 @@ body {
     top: 50px;
 }
 
-@media only screen and (max-width:375px) {
+@media only screen and (max-width:419px) {
     body {
         width: 375px;
         height: 667px;
         margin: 0;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     #title {
         font-size: 25px;
+        margin-top: 20px;
         margin-bottom: 50px;
     }
     #container {
